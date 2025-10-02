@@ -4,7 +4,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/img/accel_logo.png";
-import Avatar from "../../assets/img/nassour.jpg"; // ajoute ton image utilisateur ici
+import Avatar from "../../assets/img/nasr_new.jpg"; // ajoute ton image utilisateur ici
 
 export default function Navbar() {
   return (
