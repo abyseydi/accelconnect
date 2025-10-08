@@ -1,58 +1,113 @@
-/* eslint-disable */
+
+
 import React, { useRef, useState } from "react";
-import { Link } from "react-router-dom";
-
-import IndexNavbar from "components/Navbars/IndexNavbar.js";
-import Footer from "components/Footers/Footer.js";
-import NewsStack from "components/newsStack";
-import PrettyCalendar from "components/calendar";
-
-import HeroImage from "assets/img/bg1.png";
-import BannerImage from "assets/img/banniere.png";
+import sankara from "assets/img/sankara.jpg";
+import site1_baobab from "assets/img/heritage.png";
+import accel_png from "assets/img/accel_logo.png";
+import site2_accel from "assets/img/accel.png";
 import ressourcesImg from "assets/img/ressourcesImg.png";
+import shirikia_png from "assets/img/shirikia.png";
+import BannerImage from "assets/img/banniere.png";
+import PrettyCalendar from "components/calendar";
+import IndexNavbar from "components/Navbars/IndexNavbar.js";
+import ChatbotIcon from "assets/img/alex.png";
+import HeroImage from "assets/img/bg1.png";
 import News1 from "assets/img/mbaye.png";
 import News2 from "assets/img/newdeal.jpg";
 import News3 from "assets/img/sim.jpg";
+import NewsStack from "components/newsStack";
+import birthday from "assets/img/birthday.png";
+import menu from "assets/img/menu.png";
+import ressources from "assets/img/ressources.png";
+import rh from "assets/img/rh.png";
+import commercial from "assets/img/commercial.png";
+import moyens from "assets/img/moyens.png";
+import formation from "assets/img/formation.png";
 
-import site1_baobab from "assets/img/heritage.png";
-import accel_png from "assets/img/accel.png";
-import shirikia_png from "assets/img/shirikia.png";
 
-import seynabou from "assets/img/seynabou.jpg";
-import tamsir from "assets/img/tamsir.png";
-import ndeye from "assets/img/ndeye.jpg";
-import sankara from "assets/img/sankara.jpg";
 
-// icône du bouton flottant (Alex)
-import ChatbotIcon from "assets/img/alex.png";
 
-// Carte profil (section Bienvenue)
-const ProfileCard = ({ name, image, text }) => (
-  <div className="flex items-center p-4 min-w-0">
-    <div className="w-24 h-24 flex-shrink-0 mr-4 rounded-xl overflow-hidden">
-      <img src={image} alt={name} className="w-full h-full object-cover" />
-    </div>
-    <div className="min-w-0">
-      <h3 className="text-xl font-bold text-gray-900 mb-1 tracking-wider">{name}</h3>
-      <p className="font-serif text-base text-gray-700 leading-relaxed">{text}</p>
-    </div>
-  </div>
-);
+const seynabou = "https://placehold.co/150x150/FFC0CB/000000?text=Seyn%C3%A9dou";
+const tamsir = "https://placehold.co/150x150/ADD8E6/000000?text=Tamsir";
+const ndeye = "https://placehold.co/150x150/90EE90/000000?text=Ndeye";
+
+
+// --- Placeholder pour image non trouvée ---
+const placeholderImage = "https://placehold.co/120x120/E0E0E0/333333?text=N/A";
+
+// ====================================================================
+// 2. COMPOSANTS INTERNES
+// Définition des composants (Nav, Footer, Calendar, NewsStack)
+// à l'extérieur du composant Index.
+// ====================================================================
+
+// --- IndexNavbar Placeholder ---
+
+
+// --- Footer Component (Fix: Blue Background) ---
+const Footer = () => {
+  return (
+    <footer
+      id="contact"
+      // L'utilisation de cette classe Tailwind garantit le fond bleu foncé
+      className="bg-[#1e204a] text-white py-12 px-4"
+    >
+      <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10 text-sm">
+        <div className="col-span-2 md:col-span-1">
+          <p className="text-lg font-bold mb-2">Powered By</p>
+          {/* L'image est une URL de placeholder */}
+          <img src={accel_png} alt="Accel Logo" className="h-16 sm:h-20" />
+        </div>
+        <div>
+          <h3 className="font-bold mb-4 uppercase tracking-wide">Liens utiles</h3>
+          <ul className="space-y-3">
+            <li>🔗 Red Hat Enterprise Linux</li>
+            <li>🔗 Openshift AI</li>
+            <li>🔗 Heritage Cloud</li>
+          </ul>
+        </div>
+        <div>
+          <h3 className="font-bold mb-4 uppercase tracking-wide">Contact</h3>
+          <ul className="space-y-3">
+            <li>+221 33 820 83 83</li>
+            <li>info@accel-tech.net</li>
+            <li>165 virage, Route de l'aéroport, Dakar, Sénégal</li>
+          </ul>
+        </div>
+        <div className="flex items-start md:items-center justify-start md:justify-center gap-6 text-fuchsia-400 text-2xl">
+          {/* Icones Font Awesome (assumées chargées) */}
+          <i className="fab fa-facebook-f hover:text-white transition-colors cursor-pointer" aria-label="Facebook" />
+          <i className="fab fa-linkedin-in hover:text-white transition-colors cursor-pointer" aria-label="LinkedIn" />
+          <i className="fab fa-youtube hover:text-white transition-colors cursor-pointer" aria-label="YouTube" />
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+// --- PrettyCalendar Placeholder ---
+
+
+
+
+
+// ====================================================================
+// 3. COMPOSANT PRINCIPAL
+// ====================================================================
 
 export default function Index() {
   const twoColRef = useRef(null);
   const [chatOpen, setChatOpen] = useState(false);
 
-  const frequentSites = [
-    { title: "Site 1 - Baobab", image: site1_baobab },
-    { title: "Site 2 - Data Map", image: accel_png },
-    { title: "Site 3 - Shirikia", image: shirikia_png },
-  ];
-
-  const profiles = [
-    { name: "SEYNABOU NDOUR", image: seynabou },
-    { name: "TAMSIR NDIAYE", image: tamsir },
-    { name: "NDEYE SENE", image: ndeye },
+  // Remarque: La fonction ProfileCard n'est plus utilisée directement
+  // mais la structure de Bienvenue suit la logique des données.
+  const iconTitles = [
+    "Menu",
+    "Ressources",
+    "R.H.",
+    "Commercial",
+    "Moyens Généraux",
+    "Formation"
   ];
 
   return (
@@ -61,6 +116,7 @@ export default function Index() {
 
       {/* HERO (Alex superposé ici) */}
       <section
+        id="accueil"
         className="relative z-[60] mt-16 md:mt-20 h-screen max-h-860-px flex items-center"
         style={{
           backgroundImage: `linear-gradient(rgba(107, 20, 15, 0.65), rgba(107, 20, 15, 0.25)), url(${HeroImage})`,
@@ -92,6 +148,10 @@ export default function Index() {
             focus:outline-none focus:ring-2 focus:ring-white/70
             group
           "
+          style={{
+            marginLeft: "95%",
+            marginTop: "38%"
+          }}
           aria-label={chatOpen ? "Fermer le chatbot" : "Ouvrir le chatbot"}
           title="Chat"
         >
@@ -105,7 +165,7 @@ export default function Index() {
           >
             <img
               src={ChatbotIcon}
-              alt=""
+              alt="Icône d'assistant virtuel Alex"
               className="absolute inset-0 w-full h-full object-cover"
             />
             {/* halo discret (désactivé si préférence “reduced motion”) */}
@@ -131,9 +191,8 @@ export default function Index() {
         aria-modal="false"
         aria-label="Assistant virtuel"
       >
-        <div className="bg-white rounded-2xl shadow-2xl border border-blueGray-100 overflow-hidden">
-          {/* En-tête */}
-          <div className="bg-[#20264e] text-white px-4 py-3 flex items-center justify-between">
+        {/* <div className="bg-white rounded-2xl shadow-2xl border border-blueGray-100 overflow-hidden"> */}
+        {/* <div className="bg-[#20264e] text-white px-4 py-3 flex items-center justify-between">
             <div className="font-semibold">Assistant</div>
             <button
               onClick={() => setChatOpen(false)}
@@ -142,22 +201,24 @@ export default function Index() {
             >
               ✕
             </button>
-          </div>
+          </div> */}
 
-          {/* Corps */}
-          <div className="h-64 p-4 space-y-3 bg-blueGray-50/40">
+        {/* Corps */}
+        {/* <div className="h-64 p-4 space-y-3 bg-blueGray-50/40">
             <div className="text-sm text-blueGray-700">
               Bonjour 👋 Comment puis-je vous aider ?
             </div>
             <div className="max-w-[85%] rounded-xl bg-white shadow px-3 py-2 text-sm">
               Je peux vous guider sur le portail.
             </div>
-          </div>
+          </div> */}
 
-          {/* Saisie */}
-          <form
+        {/* Saisie */}
+        {/* <form
             className="border-t border-blueGray-100 p-2 flex items-center gap-2"
-            onSubmit={(e) => { e.preventDefault(); /* TODO: handle message */ }}
+            onSubmit={(e) => {
+              e.preventDefault();
+}}
           >
             <input
               type="text"
@@ -170,34 +231,108 @@ export default function Index() {
             >
               Envoyer
             </button>
-          </form>
-        </div>
+          </form> */}
+        {/* </div> */}
       </div>
+      {/* AJUSTEMENT 1 : Montée de la barre flottante 
+        mt-[-10rem] -> mt-[-14rem] pour une superposition garantie
+      */}
+      <section className="relative z-30 w-full mt-[-14rem] md:mt-[-18rem]" style={{ marginBottom: 140 }}>
+        {/* NOUVEAU CONTENEUR pour ajouter des marges latérales externes à la barre blanche */}
+        <div className="px-4 lg:px-16">
+          {/* Conteneur principal centré (max-w-7xl mx-auto), occupant la largeur définie par son parent (px-16) */}
+          <div className=" p-4 flex justify-center items-start gap-6 md:gap-10 border-b-4 border-[#25509d] max-w-7xl mx-auto">
 
-      {/* 2 colonnes : Calendrier + Actualités */}
-      <section className="relative bg-white py-16">
+            {/* Les six images (utilisez vos vrais imports dans le fichier complet) */}
+            {[
+              menu,
+              ressources,
+              rh,
+              commercial,
+              moyens,
+              formation
+            ].map((img, index) => (
+              // Conteneur de l'icône + titre : Flex column centré
+              <div
+                key={index}
+                // Ajout de flex-col et items-center pour aligner icône et titre
+                className="flex flex-col items-center cursor-pointer shrink-0"
+                style={{
+                  marginRight: 30,
+                  marginLeft: 30,
+                  marginTop: -50, // Conserve l'ajustement pour le centrage visuel
+                  paddingBottom: '8px'
+                }}
+                title={iconTitles[index]}
+              >
+
+                {/* Bloc blanc de l'icône */}
+                <div
+                  // MODIFICATION : J'ai forcé le style de border-radius à 25px ici
+                  className="p-3 bg-white rounded-3xl shadow-lg border border-gray-100 transition-transform duration-300 hover:scale-15"
+                  style={{
+                    borderRadius: '25px', // Style INLINE pour forcer le border-radius
+                  }}
+                >
+                  {/* Conteneur de l'image (centrage) - AUGMENTATION DE LA TAILLE ICI */}
+                  <div className="w-14 h-14 md:w-16 md:h-16 overflow-hidden rounded-lg flex items-center justify-center">
+
+                    {/* L'image est centrée et redimensionnée */}
+                    <img
+                      src={img}
+                      alt={`Image Flottante ${index + 1}`}
+                      className="object-contain"
+                      style={{ width: "67%", height: "50%" }}
+                    />
+                  </div>
+                </div>
+
+                {/* Titre sous l'image */}
+                <p className="mt-2 text-center text-sm font-medium text-gray-700 whitespace-nowrap">
+                  {iconTitles[index]}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      {/* AJUSTEMENT 2 : Ajout de pt-48 (padding top) pour compenser la montée de la barre flottante,
+        empêchant son contenu d'être caché par le calendrier/actualités.
+      */}
+      <section className="relative bg-white pt-13 pb-11">
         <div className="container mx-auto px-4">
           <div
             ref={twoColRef}
             className="flex flex-col md:flex-row items-start md:space-x-8 space-y-8 md:space-y-0"
           >
             <div className="w-full md:w-1/2 min-w-0">
-              <h3 className="text-[#1c2b68] font-semibold text-xl mb-3">
+              <h3
+                className="text-[#25509d] font-semibold text-xl mb-4"
+                style={{ color: '#25509d' }}
+              >
                 Un jour spécial pour ?
               </h3>
-              <PrettyCalendar
-                initialYear={2023}
-                initialMonth={2}
-                selectedDay={20}
-                events={[
-                  { date: "2023-02-20", label: "Anniversaire de Ousmane DIA" },
-                  { date: "2023-02-16", label: "Réunion Produits" },
-                ]}
-              />
+              <PrettyCalendar />
+
+              {/* NOUVEAU DIV D'ANNIVERSAIRE (SANS BORDURE) */}
+              <div className="mt-6 p-3 bg-white flex items-center justify-between space-x-2 text-sm border-none w-1/2 ">
+                <p className="text-black font-extrabold-700">
+                  Anniversaire de Ousmane DIA
+                </p>
+                <img
+                  src={birthday}
+                  onError={(e) => { e.target.onerror = null; e.target.src = placeholderImage; }}
+                  alt="Icône d'anniversaire"
+                  className="w-12 h-12 rounded-full object-cover"
+                />
+              </div>
             </div>
 
             <div className="w-full md:w-1/2 min-w-0">
-              <h3 className="text-[#1c2b68] font-semibold text-xl mb-3">
+              <h3
+                className="text-[#25509d] font-semibold text-xl mb-4 text-center"
+                style={{ color: '#25509d' }}
+              >
                 Actualités
               </h3>
               <NewsStack
@@ -211,7 +346,6 @@ export default function Index() {
           </div>
         </div>
       </section>
-
       {/* Bannière chevauchante */}
       <section className="relative w-full z-20" style={{ marginTop: "-500px" }}>
         <img
@@ -222,21 +356,68 @@ export default function Index() {
       </section>
 
       {/* Image ressources */}
-      <section className="relative w-full bg-white py-16">
-        <div className="w-full">
-          <img
-            src={ressourcesImg}
-            alt="Nouvelle section"
-            className="rounded-lg shadow-lg object-cover"
-            style={{
-              width: "45%",
-              height: "33%",
-              marginLeft: "0",
-              marginTop: "-350px",
-            }}
-          />
+      <section className="relative w-full bg-white pt-14 pb-14">
+        <div className="max-w-7xl mx-auto px-4 lg:px-16 flex flex-col lg:flex-row items-start lg:gap-12">
+
+          {/* Bloc 1: Image Ressources (Moitié gauche) */}
+          {/* L'image est poussée vers le haut par le margin négatif, créant l'effet de chevauchement. */}
+          <div
+            className="w-full lg:w-1/2 flex-shrink-0"
+            // Ajustement du margin top pour le placer correctement à côté des blocs
+            style={{ marginTop: "-300px" }}
+          >
+            <img
+              src={ressourcesImg}
+              alt="Nouvelle section"
+              className="rounded-lg shadow-2xl object-cover w-full max-w-lg lg:max-w-full h-auto"
+            />
+          </div>
+
+          {/* Bloc 2: Deux Blocs Gris (Moitié droite) */}
+          <div className="flex flex-row justify-center items-stretch gap-6 w-full md:w-[55%]">
+
+            {/* Bloc 1 */}
+            <div
+              className="bg-gray-200 rounded-xl shadow-lg p-6 w-56 h-80 flex flex-col justify-between" style={{ marginLeft: "20px", marginRight: "20px" }}
+
+            >
+              <h3 className="font-bold text-xl text-gray-800 mb-4">
+                Bloc d'Information 1
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Ceci est le contenu du premier bloc rectangulaire. Il est conçu pour
+                avoir une hauteur nettement supérieure à sa largeur, offrant un espace
+                vertical pour des listes ou des informations détaillées.
+              </p>
+              <a
+                href="#"
+                className="mt-4 text-[#25509d] font-semibold hover:text-blue-700 transition-colors self-start"
+              >
+                En savoir plus →
+              </a>
+            </div>
+
+            {/* Bloc 2 */}
+            <div
+              className="bg-gray-200 rounded-xl shadow-lg p-6 w-56 h-80 flex flex-col justify-between" style={{ marginLeft: "20px", marginRight: "20px" }}
+            >
+              <h3 className="font-bold text-xl text-gray-800 mb-4">
+                Bloc d'Information 2
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Voici le second bloc, de taille et de forme identiques. Ils sont côte à côte sur desktop et conservent leur alignement horizontal.
+              </p>
+              <a
+                href="#"
+                className="mt-4 text-[#25509d] font-semibold hover:text-blue-700 transition-colors self-start"
+              >
+                Voir les détails →
+              </a>
+            </div>
+          </div>
         </div>
       </section>
+
 
       {/* SITES FREQUENTS / BIENVENUE */}
       <section
@@ -250,7 +431,7 @@ export default function Index() {
                 SITES FREQUENTS
               </h2>
               <div className="flex flex-col gap-6">
-                {[site1_baobab, accel_png, shirikia_png].map((img, i) => (
+                {[site1_baobab, site2_accel, shirikia_png].map((img, i) => (
                   <div
                     key={i}
                     className="w-full h-[120px] rounded-[18px] border-[4px] border-[#2f5ac8] overflow-hidden shadow-[0_6px_18px_rgba(0,0,0,0.08)]"
@@ -271,6 +452,7 @@ export default function Index() {
                 BIENVENUE !
               </h2>
               <div className="bg-[#e5e5e7] rounded-[22px] px-8 py-8 shadow-[inset_0_2px_6px_rgba(0,0,0,0.05)]">
+                {/* Profil 1 */}
                 <div className="flex items-start gap-6 pb-6 mb-6 border-b border-[#d7d7da]">
                   <div className="w-[40px] h-[20px] rounded-[18px] overflow-hidden shrink-0">
                     <img src={seynabou} alt="FATOU DIA" className="w-full h-full object-cover" style={{ width: "40%", height: "80%" }} />
@@ -285,6 +467,7 @@ export default function Index() {
                     </p>
                   </div>
                 </div>
+                {/* Profil 2 */}
                 <div className="flex items-start gap-6 pb-6 mb-6 border-b border-[#d7d7da]">
                   <div className="w-[40px] h-[20px] rounded-[18px] overflow-hidden shrink-0 bg-[#cfd6df]">
                     <img src={tamsir} alt="MOUSSA FALL" className="w-full h-full object-cover" style={{ width: "40%", height: "80%" }} />
@@ -299,6 +482,7 @@ export default function Index() {
                     </p>
                   </div>
                 </div>
+                {/* Profil 3 */}
                 <div className="flex items-start gap-6">
                   <div className="w-[40px] h-[20px] rounded-[18px] overflow-hidden shrink-0">
                     <img src={ndeye} alt="NDEYE SENE" className="w-full h-full object-cover" style={{ width: "40%", height: "80%" }} />
