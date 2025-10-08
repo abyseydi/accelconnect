@@ -23,7 +23,9 @@ import rh from "assets/img/rh.png";
 import commercial from "assets/img/commercial.png";
 import moyens from "assets/img/moyens.png";
 import formation from "assets/img/formation.png";
+import topressource from "assets/img/topressource.png";
 
+import vie from "assets/img/vie.png";
 
 
 
@@ -191,47 +193,9 @@ export default function Index() {
         aria-modal="false"
         aria-label="Assistant virtuel"
       >
-        {/* <div className="bg-white rounded-2xl shadow-2xl border border-blueGray-100 overflow-hidden"> */}
-        {/* <div className="bg-[#20264e] text-white px-4 py-3 flex items-center justify-between">
-            <div className="font-semibold">Assistant</div>
-            <button
-              onClick={() => setChatOpen(false)}
-              className="text-white/80 hover:text-white text-sm focus:outline-none focus:ring-2 focus:ring-white/60 rounded"
-              aria-label="Fermer la fenêtre du chat"
-            >
-              ✕
-            </button>
-          </div> */}
 
-        {/* Corps */}
-        {/* <div className="h-64 p-4 space-y-3 bg-blueGray-50/40">
-            <div className="text-sm text-blueGray-700">
-              Bonjour 👋 Comment puis-je vous aider ?
-            </div>
-            <div className="max-w-[85%] rounded-xl bg-white shadow px-3 py-2 text-sm">
-              Je peux vous guider sur le portail.
-            </div>
-          </div> */}
 
-        {/* Saisie */}
-        {/* <form
-            className="border-t border-blueGray-100 p-2 flex items-center gap-2"
-            onSubmit={(e) => {
-              e.preventDefault();
-}}
-          >
-            <input
-              type="text"
-              placeholder="Écrivez votre message…"
-              className="flex-1 px-3 py-2 rounded-lg border border-blueGray-200 focus:outline-none focus:ring-2 focus:ring-[#25509d]"
-            />
-            <button
-              type="submit"
-              className="px-3 py-2 rounded-lg bg-[#25509d] text-white text-sm hover:opacity-95"
-            >
-              Envoyer
-            </button>
-          </form> */}
+
         {/* </div> */}
       </div>
       {/* AJUSTEMENT 1 : Montée de la barre flottante 
@@ -346,8 +310,7 @@ export default function Index() {
           </div>
         </div>
       </section>
-      {/* Bannière chevauchante */}
-      <section className="relative w-full z-20" style={{ marginTop: "-500px" }}>
+      <section className="relative w-full z-20" style={{ marginTop: "-500px", }}>
         <img
           src={BannerImage}
           alt="Bannière"
@@ -355,70 +318,125 @@ export default function Index() {
         />
       </section>
 
-      {/* Image ressources */}
-      <section className="relative w-full bg-white pt-14 pb-14">
-        <div className="max-w-7xl mx-auto px-4 lg:px-16 flex flex-col lg:flex-row items-start lg:gap-12">
+      <section className="relative w-full bg-white pt-14 pb-14" style={{ marginBottom: "8%" }}>
+        {/* MODIFICATION CLÉ 1: Réduction du gap horizontal de lg:gap-12 à lg:gap-8 */}
+        <div className="max-w-7xl flex flex-col lg:flex-row items-end lg:gap-8">
 
-          {/* Bloc 1: Image Ressources (Moitié gauche) */}
-          {/* L'image est poussée vers le haut par le margin négatif, créant l'effet de chevauchement. */}
+          {/* Bloc 1: Image Ressources */}
           <div
-            className="w-full lg:w-1/2 flex-shrink-0"
-            // Ajustement du margin top pour le placer correctement à côté des blocs
-            style={{ marginTop: "-300px" }}
+            className="w-full lg:w-1/3 flex-shrink-0"
+            style={{ marginTop: "-250px" }}
           >
             <img
               src={ressourcesImg}
               alt="Nouvelle section"
-              className="rounded-lg shadow-2xl object-cover w-full max-w-lg lg:max-w-full h-auto"
+              className="rounded-lg shadow-2xl object-cover w-full max-w-xs max-h-[350px] h-auto"
+              style={{ width: "85%" }}
             />
           </div>
 
-          {/* Bloc 2: Deux Blocs Gris (Moitié droite) */}
-          <div className="flex flex-row justify-center items-stretch gap-6 w-full md:w-[55%]">
-
-            {/* Bloc 1 */}
+          {/* Bloc 2: Les deux cartes */}
+          <div
+            // MODIFICATION CLÉ 2: Retrait du padding (p-8) qui ajoutait un espace à gauche
+            className="flex flex-row justify-start items-stretch gap-8 w-full md:w-[85%] my-10 lg:w-2/3"
+            style={{ "--custom-radius": "1rem" }}
+          >
+            {/* Bloc 1: Top Ressources (Contenu non modifié) */}
             <div
-              className="bg-gray-200 rounded-xl shadow-lg p-6 w-56 h-80 flex flex-col justify-between" style={{ marginLeft: "20px", marginRight: "20px" }}
-
+              className="shadow-md p-6 w-64 h-80 flex flex-col justify-between items-center"
+              style={{
+                backgroundColor: "#f0f0f0",
+                borderRadius: "var(--custom-radius)",
+                marginRight: "5%"
+              }}
             >
-              <h3 className="font-bold text-xl text-gray-800 mb-4">
-                Bloc d'Information 1
+              <h3 className="font-extrabold text-2xl text-black text-center" style={{ marginTop: "10%" }}>
+                Top Ressources
               </h3>
-              <p className="text-gray-600 text-sm">
-                Ceci est le contenu du premier bloc rectangulaire. Il est conçu pour
-                avoir une hauteur nettement supérieure à sa largeur, offrant un espace
-                vertical pour des listes ou des informations détaillées.
-              </p>
+
+              {/* Contenu interne */}
+              <div className="flex flex-row items-center justify-center gap-2 mt-6">
+                <div className="w-24 h-24 flex justify-center items-center">
+                  <img
+                    src={topressource}
+                    alt="Icône Top Ressources"
+                    className="object-contain"
+                    style={{ width: "75%", height: "auto", marginRight: "20%", marginLeft: "10%" }}
+                  />
+                </div>
+                <div
+                  // MODIFICATION CLÉ : Remplacement de gap-4 par gap-5 pour plus d'espace vertical
+                  className="flex flex-col gap-5 items-start justify-center"
+                  style={{
+                    marginRight: "2%",
+                    width: "60%"
+                  }}
+                >
+                  <a href="#" className="text-black text-xl" style={{ textDecoration: 'underline' }}>Omni 365</a>
+                  <a href="#" className="text-black text-xl" style={{ textDecoration: 'underline' }}>Vision accel</a>
+                  <a href="#" className="text-black text-xl" style={{ textDecoration: 'underline' }}>Kaarangué</a>
+                </div>
+              </div>
+
+              {/* Lien Voir plus */}
               <a
                 href="#"
-                className="mt-4 text-[#25509d] font-semibold hover:text-blue-700 transition-colors self-start"
+                className="mt-auto text-black font-medium text-base hover:text-gray-700 transition-colors self-center" style={{ marginBlock: "10%" }}
               >
-                En savoir plus →
+                Voir plus
               </a>
             </div>
 
-            {/* Bloc 2 */}
+            {/* ---------------------------------------------------------------------- */}
+
+            {/* Bloc 2: Vie d'entreprise (Contenu non modifié) */}
             <div
-              className="bg-gray-200 rounded-xl shadow-lg p-6 w-56 h-80 flex flex-col justify-between" style={{ marginLeft: "20px", marginRight: "20px" }}
+              className="shadow-md p-6 w-64 h-80 flex flex-col justify-between items-center"
+              style={{
+                backgroundColor: "#f0f0f0",
+                borderRadius: "var(--custom-radius)",
+                marginRight: "5%"
+              }}
             >
-              <h3 className="font-bold text-xl text-gray-800 mb-4">
-                Bloc d'Information 2
+              <h3 className="font-extrabold text-2xl text-black text-center" style={{ marginTop: "10%" }}>
+                Vie d'entreprise
               </h3>
-              <p className="text-gray-600 text-sm">
-                Voici le second bloc, de taille et de forme identiques. Ils sont côte à côte sur desktop et conservent leur alignement horizontal.
-              </p>
+
+              {/* Contenu interne */}
+              <div className="flex flex-row items-center justify-center gap-2 mt-6">
+                <div className="w-24 h-24 flex justify-center items-center">
+                  <img
+                    src={vie}
+                    alt="Icône Top Ressources"
+                    className="object-contain"
+                    style={{ width: "75%", height: "auto", marginRight: "20%", marginLeft: "10%" }}
+                  />
+                </div>
+                <div
+                  // MODIFICATION CLÉ : Remplacement de gap-3 par gap-4
+                  className="flex flex-col gap-4 items-start justify-center"
+                  style={{
+                    marginRight: "2%",
+                    width: "60%"
+                  }}
+                >
+                  <a href="#" className="text-black text-xl" style={{ textDecoration: 'underline' }}>Qui fait quoi ?</a>
+                  <a href="#" className="text-black text-xl" style={{ textDecoration: 'underline' }}>Initiative OVT</a>
+                  <a href="#" className="text-black text-xl" style={{ textDecoration: 'underline' }}>Temps forts RH</a>
+                </div>
+              </div>
+
+              {/* Lien Voir plus */}
               <a
                 href="#"
-                className="mt-4 text-[#25509d] font-semibold hover:text-blue-700 transition-colors self-start"
+                className="mt-auto text-black font-medium text-base hover:text-gray-700 transition-colors self-center" style={{ marginBlock: "10%" }}
               >
-                Voir les détails →
+                Voir plus
               </a>
             </div>
           </div>
         </div>
       </section>
-
-
       {/* SITES FREQUENTS / BIENVENUE */}
       <section
         className="w-full bg-white py-14"
@@ -427,7 +445,10 @@ export default function Index() {
         <div className="max-w-[1280px] mx-auto px-6 lg:px-12">
           <div className="flex justify-between items-start gap-12">
             <div className="rounded-xl" style={{ width: "33.33%" }}>
-              <h2 className="text-[#25509d] font-extrabold tracking-wide text-[24px] mb-6">
+              {/* <h2 className="text-[#25509d] font-extrabold tracking-wide text-[24px] mb-6"> */}
+              <h2 className="text-[#25509d] font-semibold text-xl mb-4 text-center" // Ajout de text-center
+                style={{ color: '#25509d' }}>
+
                 SITES FREQUENTS
               </h2>
               <div className="flex flex-col gap-6">
@@ -439,7 +460,7 @@ export default function Index() {
                   >
                     <img
                       src={img}
-                      alt={`Site ${i + 1}`}
+                      alt="top ressources"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -448,7 +469,8 @@ export default function Index() {
             </div>
 
             <div className="rounded-xl" style={{ width: "66.66%", marginLeft: "200px" }}>
-              <h2 className="text-[#25509d] font-extrabold tracking-wide text-[28px] mb-6 text-center">
+              <h2 className="text-[#25509d] font-semibold text-xl mb-4 text-center" // Ajout de text-center
+                style={{ color: '#25509d' }}>
                 BIENVENUE !
               </h2>
               <div className="bg-[#e5e5e7] rounded-[22px] px-8 py-8 shadow-[inset_0_2px_6px_rgba(0,0,0,0.05)]">
@@ -513,9 +535,14 @@ export default function Index() {
             <span className="mt-3 text-base md:text-lg font-semibold">Thomas Sankara</span>
           </div>
 
-          <div className="bg-[#e6e6e6] rounded-md md:rounded-lg shadow-sm px-6 py-5 md:px-8 md:py-6 max-w-[600px]">
+          <div
+            // Rétention des classes de forme et d'ombre
+            className="rounded-md md:rounded-lg shadow-sm px-6 py-5 md:px-8 md:py-6 max-w-[600px]"
+            // MODIFICATION CLÉ : Ajout du style en ligne pour forcer le fond gris
+            style={{ backgroundColor: '#e6e6e6', marginLeft: "10%", width: '#)%' }}
+          >
             <p className="font-semibold italic text-[#2b2b2b] text-[15px] md:text-[17px] leading-relaxed text-center">
-              “Nous devons accepter de vivre africain. C’est la seule façon de vivre
+              “Nous devons accepter de vivre africain. C’est la seule façon de vivre<br />
               libre et de vivre digne.”
             </p>
           </div>
