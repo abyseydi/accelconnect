@@ -24,13 +24,14 @@ import commercial from "assets/img/commercial.png";
 import moyens from "assets/img/moyens.png";
 import formation from "assets/img/formation.png";
 import topressource from "assets/img/topressource.png";
+import tamsir from "assets/img/tamsir.png";
+import seynabou from "assets/img/seynabou.jpg";
+import moussa from "assets/img/moussa.png";
 
 import vie from "assets/img/vie.png";
 
 
 
-const seynabou = "https://placehold.co/150x150/FFC0CB/000000?text=Seyn%C3%A9dou";
-const tamsir = "https://placehold.co/150x150/ADD8E6/000000?text=Tamsir";
 const ndeye = "https://placehold.co/150x150/90EE90/000000?text=Ndeye";
 
 
@@ -45,51 +46,54 @@ const placeholderImage = "https://placehold.co/120x120/E0E0E0/333333?text=N/A";
 
 // --- IndexNavbar Placeholder ---
 
-
-// --- Footer Component (Fix: Blue Background) ---
 const Footer = () => {
   return (
     <footer
-      id="contact"
-      // L'utilisation de cette classe Tailwind garantit le fond bleu foncé
-      className="bg-[#1e204a] text-white py-12 px-4"
+      className="text-white px-4 sm:px-6 lg:px-10 py-10"
+      style={{ backgroundColor: "#1e1446" }}
     >
-      <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10 text-sm">
-        <div className="col-span-2 md:col-span-1">
-          <p className="text-lg font-bold mb-2">Powered By</p>
-          {/* L'image est une URL de placeholder */}
-          <img src={accel_png} alt="Accel Logo" className="h-16 sm:h-20" />
-        </div>
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-10 text-sm">
+
+        {/* Colonne 1 */}
         <div>
-          <h3 className="font-bold mb-4 uppercase tracking-wide">Liens utiles</h3>
+          <p className="text-lg font-bold mb-2">Powered By</p>
+          <img
+            src="img/accel_logo_light.png"
+            alt="Accel Logo"
+            className="h-16 sm:h-20"
+          />
+        </div>
+
+        {/* Colonne 2 */}
+        <div>
+          <h3 className="font-bold mb-4">Liens utiles</h3>
           <ul className="space-y-3">
             <li>🔗 Red Hat Enterprise Linux</li>
-            <li>🔗 Openshift AI</li>
+            <li>🔗 OpenShift AI</li>
             <li>🔗 Heritage Cloud</li>
           </ul>
         </div>
+
+        {/* Colonne 3 */}
         <div>
-          <h3 className="font-bold mb-4 uppercase tracking-wide">Contact</h3>
+          <h3 className="font-bold mb-4">Contact</h3>
           <ul className="space-y-3">
-            <li>+221 33 820 83 83</li>
-            <li>info@accel-tech.net</li>
-            <li>165 virage, Route de l'aéroport, Dakar, Sénégal</li>
+            <li>📞 +221 33 820 83 83</li>
+            <li>📧 info@accel-tech.net</li>
+            <li>📍 165 Virage, Route de l'aéroport, Dakar, Sénégal</li>
           </ul>
         </div>
-        <div className="flex items-start md:items-center justify-start md:justify-center gap-6 text-fuchsia-400 text-2xl">
-          {/* Icones Font Awesome (assumées chargées) */}
-          <i className="fab fa-facebook-f hover:text-white transition-colors cursor-pointer" aria-label="Facebook" />
-          <i className="fab fa-linkedin-in hover:text-white transition-colors cursor-pointer" aria-label="LinkedIn" />
-          <i className="fab fa-youtube hover:text-white transition-colors cursor-pointer" aria-label="YouTube" />
+
+        {/* Colonne 4 - Réseaux sociaux */}
+        <div className="flex items-end md:items-center justify-start md:justify-center gap-6 text-fuchsia-500 text-2xl">
+          <i className="fab fa-facebook-f" aria-label="Facebook" />
+          <i className="fab fa-linkedin-in" aria-label="LinkedIn" />
+          <i className="fab fa-youtube" aria-label="YouTube" />
         </div>
       </div>
     </footer>
   );
 };
-
-// --- PrettyCalendar Placeholder ---
-
-
 
 
 
@@ -429,7 +433,7 @@ export default function Index() {
               {/* Lien Voir plus */}
               <a
                 href="#"
-                className="mt-auto text-black font-medium text-base hover:text-gray-700 transition-colors self-center" style={{ marginBlock: "10%" }}
+                className="mt-auto text-gray font-medium text-base hover:text-gray-700 transition-colors self-center" style={{ marginBlock: "10%" }}
               >
                 Voir plus
               </a>
@@ -473,81 +477,142 @@ export default function Index() {
                 style={{ color: '#25509d' }}>
                 BIENVENUE !
               </h2>
-              <div className="bg-[#e5e5e7] rounded-[22px] px-8 py-8 shadow-[inset_0_2px_6px_rgba(0,0,0,0.05)]">
+              <div
+                className="px-8 py-8 shadow-[inset_0_2px_6px_rgba(0,0,0,0.05)]"
+                style={{
+                  backgroundColor: "#e1e1e1",
+                  borderRadius: "24px",
+                  paddingLeft: "2%",
+                  paddingTop: "2%", paddingRight: "2%", marginRight: "2%",
+                }}
+              >
                 {/* Profil 1 */}
                 <div className="flex items-start gap-6 pb-6 mb-6 border-b border-[#d7d7da]">
-                  <div className="w-[40px] h-[20px] rounded-[18px] overflow-hidden shrink-0">
-                    <img src={seynabou} alt="FATOU DIA" className="w-full h-full object-cover" style={{ width: "40%", height: "80%" }} />
+                  <div
+                    className="w-[60px] h-[60px] rounded-full overflow-hidden shrink-0 shadow-sm"
+                    style={{
+                      borderRadius: "5%", // ajustable (ex: 12px, 18px, 50%)
+                      backgroundColor: "#cfd6df",
+                      width: "35%",
+                    }}
+                  >
+                    <img
+                      src={seynabou}
+                      alt="SEYNABOU NDOUR"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                  <div className="ml-[30px]">
-                    <div className="text-[#1c58c9] font-bold uppercase tracking-wide text-sm mb-1">
-                      SEYNABOU NDOUR
+                  <div className="ml-[10px]" style={{ marginLeft: "3%", }}>
+                    <div
+                      className="font-bold uppercase tracking-wide text-sm mb-1"
+                      style={{ color: "#25509d" }}
+                    >                      SEYNABOU NDOUR
                     </div>
                     <p className="text-[15px] leading-relaxed">
-                      <span className="font-extrabold">Lorem Ipsum is simply dummy</span><br />
+                      <span className="text-[#1c58c9] font-bold  tracking-wide text-sm mb-1">Lorem Ipsum is simply dummy</span>
+                      <br />
                       text of the printing and<br />typesetting industry.
                     </p>
                   </div>
                 </div>
+
                 {/* Profil 2 */}
                 <div className="flex items-start gap-6 pb-6 mb-6 border-b border-[#d7d7da]">
-                  <div className="w-[40px] h-[20px] rounded-[18px] overflow-hidden shrink-0 bg-[#cfd6df]">
-                    <img src={tamsir} alt="MOUSSA FALL" className="w-full h-full object-cover" style={{ width: "40%", height: "80%" }} />
+                  <div
+                    className="w-[60px] h-[60px] rounded-full overflow-hidden shrink-0 shadow-sm"
+                    style={{
+                      borderRadius: "5%", // ajustable (ex: 12px, 18px, 50%)
+                      backgroundColor: "#cfd6df",
+                      width: "35%"
+                    }}
+                  >
+                    <img
+                      src={tamsir}
+                      alt="tamsir ndiaye "
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                  <div className="ml-[30px]">
-                    <div className="text-[#1c58c9] font-bold uppercase tracking-wide text-sm mb-1">
-                      MOUSSA TRAORE
+                  <div className="ml-[10px]" style={{ marginLeft: "3%", }}>
+                    <div
+                      className="font-bold uppercase tracking-wide text-sm mb-1"
+                      style={{ color: "#25509d" }}
+                    >                      TAMSIR NDIAYE
                     </div>
                     <p className="text-[15px] leading-relaxed">
-                      <span className="font-extrabold">Lorem Ipsum is simply dummy</span><br />
+                      <span className="text-[#1c58c9] font-bold  tracking-wide text-sm mb-1">Lorem Ipsum is simply dummy</span>
+                      <br />
                       text of the printing and<br />typesetting industry.
                     </p>
                   </div>
                 </div>
+
                 {/* Profil 3 */}
-                <div className="flex items-start gap-6">
-                  <div className="w-[40px] h-[20px] rounded-[18px] overflow-hidden shrink-0">
-                    <img src={ndeye} alt="NDEYE SENE" className="w-full h-full object-cover" style={{ width: "40%", height: "80%" }} />
+                <div className="flex items-start gap-6 pb-6 mb-6 border-b border-[#d7d7da]">
+                  <div
+                    className="w-[60px] h-[60px] rounded-full overflow-hidden shrink-0 shadow-sm"
+                    style={{
+                      borderRadius: "5%", // ajustable (ex: 12px, 18px, 50%)
+                      backgroundColor: "#cfd6df",
+                      width: "35%"
+                    }}
+                  >
+                    <img
+                      src={moussa}
+                      alt="moussa "
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                  <div className="ml-[30px]">
-                    <div className="text-[#1c58c9] font-bold uppercase tracking-wide text-sm mb-1">
-                      NDEYE SENE
+                  <div className="ml-[10px]" style={{ marginLeft: "3%", }}>
+                    <div
+                      className="font-bold uppercase tracking-wide text-sm mb-1"
+                      style={{ color: "#25509d" }}
+                    >                MOUSSA TRAORE
                     </div>
                     <p className="text-[15px] leading-relaxed">
-                      <span className="font-extrabold">Lorem Ipsum is simply dummy</span><br />
+                      <span className="text-[#1c58c9] font-bold  tracking-wide text-sm mb-1">Lorem Ipsum is simply dummy</span>
+                      <br />
                       text of the printing and<br />typesetting industry.
                     </p>
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
       </section>
 
       {/* Citation */}
-      <section className="w-full bg-white py-20 flex justify-center items-center">
-        <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-10">
-          <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <div className="w-[130px] h-[130px] md:w-[150px] md:h-[150px] rounded-lg overflow-hidden shadow">
-              <img src={sankara} alt="Thomas Sankara" className="w-full h-full object-cover" />
+      <section className="w-full bg-white py-16 flex justify-center items-center">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8 max-w-4xl w-full px-6 text-center">
+
+          {/* Bloc image + nom centré */}
+          <div className="flex flex-col items-center">
+            <div className="w-[120px] h-[150px] rounded-md overflow-hidden shadow-md">
+              <img
+                src={sankara}
+                alt="Thomas Sankara"
+                className="w-full h-full object-cover"
+              />
             </div>
-            <span className="mt-3 text-base md:text-lg font-semibold">Thomas Sankara</span>
+            <span className="mt-3 font-semibold text-gray-900 text-lg">
+              Thomas Sankara
+            </span>
           </div>
 
-          <div
-            // Rétention des classes de forme et d'ombre
-            className="rounded-md md:rounded-lg shadow-sm px-6 py-5 md:px-8 md:py-6 max-w-[600px]"
-            // MODIFICATION CLÉ : Ajout du style en ligne pour forcer le fond gris
-            style={{ backgroundColor: '#e6e6e6', marginLeft: "10%", width: '#)%' }}
-          >
-            <p className="font-semibold italic text-[#2b2b2b] text-[15px] md:text-[17px] leading-relaxed text-center">
-              “Nous devons accepter de vivre africain. C’est la seule façon de vivre<br />
-              libre et de vivre digne.”
+          {/* Bloc citation centré */}
+          <div className="bg-[#e6e6e6] rounded-md px-6 py-4 shadow-sm max-w-[500px]" style={{ backgroundColor: "#e1e1e1", marginLeft: "1%" }}>
+            <p className="text-center italic font-extrabold text-[#2b2b2b] leading-relaxed">
+              “Nous devons accepter de vivre africain. C’est la seule façon de vivre   <br /> libre et de vivre digne.”
             </p>
           </div>
+
         </div>
       </section>
+
+
+
+
 
       <Footer />
     </>
