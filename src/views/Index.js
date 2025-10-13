@@ -35,16 +35,8 @@ import vie from "assets/img/vie.png";
 const ndeye = "https://placehold.co/150x150/90EE90/000000?text=Ndeye";
 
 
-// --- Placeholder pour image non trouvée ---
 const placeholderImage = "https://placehold.co/120x120/E0E0E0/333333?text=N/A";
 
-// ====================================================================
-// 2. COMPOSANTS INTERNES
-// Définition des composants (Nav, Footer, Calendar, NewsStack)
-// à l'extérieur du composant Index.
-// ====================================================================
-
-// --- IndexNavbar Placeholder ---
 
 const Footer = () => {
   return (
@@ -105,8 +97,7 @@ export default function Index() {
   const twoColRef = useRef(null);
   const [chatOpen, setChatOpen] = useState(false);
 
-  // Remarque: La fonction ProfileCard n'est plus utilisée directement
-  // mais la structure de Bienvenue suit la logique des données.
+
   const iconTitles = [
     "Menu",
     "Ressources",
@@ -220,15 +211,13 @@ export default function Index() {
               moyens,
               formation
             ].map((img, index) => (
-              // Conteneur de l'icône + titre : Flex column centré
               <div
                 key={index}
-                // Ajout de flex-col et items-center pour aligner icône et titre
                 className="flex flex-col items-center cursor-pointer shrink-0"
                 style={{
                   marginRight: 30,
                   marginLeft: 30,
-                  marginTop: -50, // Conserve l'ajustement pour le centrage visuel
+                  marginTop: -50,
                   paddingBottom: '8px'
                 }}
                 title={iconTitles[index]}
@@ -236,10 +225,9 @@ export default function Index() {
 
                 {/* Bloc blanc de l'icône */}
                 <div
-                  // MODIFICATION : J'ai forcé le style de border-radius à 25px ici
                   className="p-3 bg-white rounded-3xl shadow-lg border border-gray-100 transition-transform duration-300 hover:scale-15"
                   style={{
-                    borderRadius: '25px', // Style INLINE pour forcer le border-radius
+                    borderRadius: '25px',
                   }}
                 >
                   {/* Conteneur de l'image (centrage) - AUGMENTATION DE LA TAILLE ICI */}
@@ -341,7 +329,6 @@ export default function Index() {
 
           {/* Bloc 2: Les deux cartes */}
           <div
-            // MODIFICATION CLÉ 2: Retrait du padding (p-8) qui ajoutait un espace à gauche
             className="flex flex-row justify-start items-stretch gap-8 w-full md:w-[85%] my-10 lg:w-2/3"
             style={{ "--custom-radius": "1rem" }}
           >
@@ -369,7 +356,6 @@ export default function Index() {
                   />
                 </div>
                 <div
-                  // MODIFICATION CLÉ : Remplacement de gap-4 par gap-5 pour plus d'espace vertical
                   className="flex flex-col gap-5 items-start justify-center"
                   style={{
                     marginRight: "2%",
@@ -417,7 +403,6 @@ export default function Index() {
                   />
                 </div>
                 <div
-                  // MODIFICATION CLÉ : Remplacement de gap-3 par gap-4
                   className="flex flex-col gap-4 items-start justify-center"
                   style={{
                     marginRight: "2%",
@@ -491,7 +476,7 @@ export default function Index() {
                   <div
                     className="w-[60px] h-[60px] rounded-full overflow-hidden shrink-0 shadow-sm"
                     style={{
-                      borderRadius: "5%", // ajustable (ex: 12px, 18px, 50%)
+                      borderRadius: "5%",
                       backgroundColor: "#cfd6df",
                       width: "35%",
                     }}
@@ -521,7 +506,7 @@ export default function Index() {
                   <div
                     className="w-[60px] h-[60px] rounded-full overflow-hidden shrink-0 shadow-sm"
                     style={{
-                      borderRadius: "5%", // ajustable (ex: 12px, 18px, 50%)
+                      borderRadius: "5%",
                       backgroundColor: "#cfd6df",
                       width: "35%"
                     }}
@@ -551,7 +536,7 @@ export default function Index() {
                   <div
                     className="w-[60px] h-[60px] rounded-full overflow-hidden shrink-0 shadow-sm"
                     style={{
-                      borderRadius: "5%", // ajustable (ex: 12px, 18px, 50%)
+                      borderRadius: "5%",
                       backgroundColor: "#cfd6df",
                       width: "35%"
                     }}
